@@ -1,0 +1,39 @@
+TRANSKRYPCJA AUDIO -> TEKST (Whisper, calkowicie lokalnie, za darmo)
+=====================================================================
+
+UZYCIE NA CO DZIEN
+------------------
+1. Wrzuc nagrania (mp3/wav/m4a/ogg/flac) do folderu:  do_transkrypcji
+2. Kliknij dwa razy:  Transkrybuj.bat        (model small - szybszy)
+              albo:  Transkrybuj_MEDIUM.bat  (dokladniejszy, duzo wolniejszy,
+                                              potrzebuje ok. 5 GB wolnego RAM)
+3. Wyniki (.txt z czasami) pojawia sie w folderze:  transkrypcje
+
+Mozna tez przeciagnac pliki audio myszka wprost na plik .bat.
+Podczas pracy komputer sam nie zasnie; nie zamykaj klapy laptopa.
+
+PRZENOSZENIE / KOPIOWANIE PROGRAMU
+----------------------------------
+Caly ten folder mozna skopiowac w dowolne miejsce (inny dysk, pendrive,
+inny komputer) - wszystkie sciezki sa wzgledne.
+
+- Ten sam komputer: dziala od razu po skopiowaniu.
+- NOWY komputer:
+    1. Zainstaluj Pythona z https://www.python.org/downloads/
+       (zaznacz "Add Python to PATH" podczas instalacji)
+    2. Uruchom raz:  Instaluj.bat  (utworzy srodowisko i pobierze biblioteki)
+    3. Gotowe - uzywaj Transkrybuj.bat
+
+CO JEST W SRODKU
+----------------
+transkrybuj.py       - wlasciwy program (ustawienia: model/jezyk/grupowanie na gorze pliku)
+runtime\ffmpeg\      - dekoder audio (wbudowany, niczego nie trzeba instalowac)
+runtime\models\      - modele Whisper small i medium (dzieki temu nowy komputer
+                       nie musi ich pobierac z internetu)
+runtime\venv\        - biblioteki Pythona (tworzone przez Instaluj.bat)
+do_transkrypcji\     - tu wrzucasz nagrania
+transkrypcje\        - tu pojawiaja sie wyniki
+
+Wszystko dziala w 100% lokalnie - nagrania nie wychodza z komputera.
+Licencje (Whisper MIT, ffmpeg GPL, Python PSF) pozwalaja na darmowe
+uzycie prywatne i firmowe.

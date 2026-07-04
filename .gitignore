@@ -1,0 +1,12 @@
+# Prywatne nagrania i transkrypcje - NIGDY nie publikowac
+do_transkrypcji/
+transkrypcje/
+
+# Ciezkie pliki binarne (GitHub nie przyjmuje >100 MB)
+# - modele Whisper pobieraja sie same przy pierwszym uzyciu
+# - ffmpeg instaluje Instaluj.bat
+runtime/
+
+# Smieci Pythona
+__pycache__/
+*.pyc
