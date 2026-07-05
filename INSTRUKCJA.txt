@@ -3,7 +3,9 @@ TRANSKRYPCJA AUDIO -> TEKST (Whisper, calkowicie lokalnie, za darmo)
 
 UZYCIE NA CO DZIEN
 ------------------
-1. Wrzuc nagrania (mp3/wav/m4a/ogg/flac) do folderu:  do_transkrypcji
+1. Wrzuc nagrania do folderu:  do_transkrypcji
+   (audio: mp3/wav/m4a/ogg/flac/aac/wma/opus; wideo: mp4/mpg/mkv/mov/avi/webm
+    - z wideo wyciagana jest sciezka dzwiekowa)
 2. Kliknij dwa razy:  Transkrybuj.bat        (model small - szybszy)
               albo:  Transkrybuj_MEDIUM.bat  (dokladniejszy, duzo wolniejszy,
                                               potrzebuje ok. 5 GB wolnego RAM)

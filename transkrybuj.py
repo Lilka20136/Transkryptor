@@ -26,7 +26,9 @@ IN_DIR = os.path.join(BASE, "do_transkrypcji")
 OUT_DIR = os.path.join(BASE, "transkrypcje")
 FFMPEG_DIR = os.path.join(BASE, "runtime", "ffmpeg")
 MODELS_DIR = os.path.join(BASE, "runtime", "models")
-AUDIO_EXT = (".mp3", ".wav", ".m4a", ".ogg", ".flac")
+# audio + wideo (z wideo wyciagana jest sciezka dzwiekowa)
+AUDIO_EXT = (".mp3", ".wav", ".m4a", ".ogg", ".flac", ".aac", ".wma", ".opus",
+             ".mp4", ".mpg", ".mpeg", ".mkv", ".mov", ".avi", ".webm", ".wmv")
 
 # ffmpeg wbudowany w folder programu ma pierwszeństwo przed systemowym
 if os.path.isfile(os.path.join(FFMPEG_DIR, "ffmpeg.exe")):

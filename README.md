@@ -4,7 +4,7 @@ Prosta, całkowicie **lokalna** transkrypcja nagrań audio na tekst (po polsku i
 
 ## Możliwości
 
-- 🎙️ Transkrypcja mp3 / wav / m4a / ogg / flac → pliki `.txt` ze znacznikami czasu
+- 🎙️ Transkrypcja audio (mp3, wav, m4a, ogg, flac, aac, wma, opus) i **wideo** (mp4, mpg, mkv, mov, avi, webm — z filmu wyciągana jest ścieżka dźwiękowa) → pliki `.txt` ze znacznikami czasu
 - 📚 Kolejka wielu plików naraz (przetwarzane jeden po drugim, model ładowany raz)
 - 🕐 Wynik grupowany w bloki czasowe (domyślnie ~60 s) zamiast porwanych urywków
 - 💤 Blokuje usypianie komputera na czas pracy (Windows Modern Standby zamraża obliczenia)
