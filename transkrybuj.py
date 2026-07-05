@@ -100,9 +100,19 @@ def main():
     # a błąd systemowy (WinError 2) nie mówi wprost, czego brakuje.
     import shutil
     if not shutil.which("ffmpeg"):
+        # awaryjnie: ffmpeg wbudowany w bibliotekę imageio-ffmpeg (instaluje ją Instaluj.bat)
+        try:
+            import imageio_ffmpeg
+            os.makedirs(FFMPEG_DIR, exist_ok=True)
+            shutil.copy(imageio_ffmpeg.get_ffmpeg_exe(), os.path.join(FFMPEG_DIR, "ffmpeg.exe"))
+            os.environ["PATH"] = FFMPEG_DIR + os.pathsep + os.environ.get("PATH", "")
+            print("ffmpeg przygotowany automatycznie (z pakietu imageio-ffmpeg).")
+        except ImportError:
+            pass
+    if not shutil.which("ffmpeg"):
         print("BŁĄD: brak ffmpeg — programu do odczytu plików audio.")
         print("Napraw jednym z dwóch sposobów:")
-        print("  1. Uruchom ponownie Instaluj.bat (pobierze ffmpeg automatycznie), albo")
+        print("  1. Uruchom ponownie Instaluj.bat, albo")
         print("  2. Pobierz https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip,")
         print(f"     rozpakuj i skopiuj plik bin\\ffmpeg.exe do folderu:\n     {FFMPEG_DIR}")
         return
