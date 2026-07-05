@@ -96,6 +96,17 @@ def main():
               f"albo przeciągnij pliki na Transkrybuj.bat")
         return
 
+    # Kontrola ffmpeg PRZED startem — bez niego Whisper nie odczyta audio,
+    # a błąd systemowy (WinError 2) nie mówi wprost, czego brakuje.
+    import shutil
+    if not shutil.which("ffmpeg"):
+        print("BŁĄD: brak ffmpeg — programu do odczytu plików audio.")
+        print("Napraw jednym z dwóch sposobów:")
+        print("  1. Uruchom ponownie Instaluj.bat (pobierze ffmpeg automatycznie), albo")
+        print("  2. Pobierz https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip,")
+        print(f"     rozpakuj i skopiuj plik bin\\ffmpeg.exe do folderu:\n     {FFMPEG_DIR}")
+        return
+
     print(f"Plików do przetworzenia: {len(files)} | model: {MODEL} | język: {LANGUAGE or 'auto'}")
     print(f"Ładowanie modelu '{MODEL}' (pierwszy raz = pobieranie z internetu)...")
     import whisper  # import tutaj, żeby komunikat wyżej pojawił się od razu
